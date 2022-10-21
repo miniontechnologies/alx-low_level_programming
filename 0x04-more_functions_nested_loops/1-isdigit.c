@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * _isdigit - checks if the no is n/n 0 to 9
- * @c: input no
+ * _isdigit - checks if the number is between 0 to 9
+ * @c: input number
  * Return: 1 if it is a number (0 to 9), 0 in other case
  */
 
