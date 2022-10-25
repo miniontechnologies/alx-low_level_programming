@@ -1,0 +1,1 @@
+pointera and arrays
