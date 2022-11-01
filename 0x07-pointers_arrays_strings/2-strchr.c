@@ -3,9 +3,10 @@
 /**
  * _strchr - locate character in a string
  * @s: source string
- * @c: character to find
+ * @c: character to be found
  *
- * Return: the string from character found
+ * Return: if c is found - a pointer to first occurance
+ *         if c is not found - NULL
  */
 char *_strchr(char *s, char c)
 {
