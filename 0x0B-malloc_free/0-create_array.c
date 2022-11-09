@@ -3,7 +3,7 @@
  * create_array - arrays for prints of string
  * @size: number of elements array
  * @c: char
- * Return: pointer
+ * Return: a pointer to array or NULL if size 0  or fails
  */
 char *create_array(unsigned int size, char c)
 {
