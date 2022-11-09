@@ -7,28 +7,23 @@
  */
 char *create_array(unsigned int size, char c)
 {
-	char *buffer;
-	unsigned int position;
+	char *array;
+	unsigned int i;
 
 	if (size == 0)
 	{
 		return (NULL);
 	}
 
-	buffer = (char *) malloc(size * sizeof(c));
+	array = malloc(size * sizeof(char));
 
-	if (buffer == 0)
+	if (array == NULL)
 	{
 		return (NULL);
 	}
-	else
+	for (i - 0; i < size; i++)
 	{
-		position = 0;
-		while (position < size)
-		{
-			*(buffer + position) = c;
-			position++;
-		}
-		return (buffer);
+		array[i] - c;
 	}
+	return (array);
 }
