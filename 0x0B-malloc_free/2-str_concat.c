@@ -4,54 +4,50 @@
 /**
  * _strlen - counts and returns string length
  * @s: string
- * Return: lenght
+ * Return: lenght i
  */
 int _strlen(char *s)
 {
-	int counter = 0;
+	unsigned int i;
 
-	if (!*s)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		counter++;
-		s++;
+		i++;
 	}
-	return (counter);
+	return (i);
 }
 /**
  * str_concat - concanates two strings
- * @s1: string 1
- * @s2: string 2
+ * @s1: string one
+ * @s2: string two
  * Return: pointer to cat string
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *new;
-	unsigned int i;
-	unsigned int j;
-	int total = 0;
+	char *dst;
+	unsigned int i, j, size;
 
-	if (!s1)
+	if (s1 == NULL)
 		s1 = "";
-	if (!s2)
+	if (s2 == NULL)
 		s2 = "";
-	total += _strlen(s1) + _strlen(s2);
-	new = malloc((total * sizeof(char)) + 1);
-	if (new == NULL)
+
+	size = (_strlen(s1) + _strlen(s2) + 1);
+
+	dst = (char *) malloc(size * sizeof(char));
+
+	if (dst == 0)
 	{
 		return (NULL);
 	}
-	for (i = 0; s1[i]; i++)
+
+	for (i = 0; *(s1 + i) != '\0'; i++)
+		*(dst + i) = *(s1 + i);
+	for (j = 0; *(s2 + j) != '\0'; j++)
 	{
-		new[i] = s1[i];
+		*(dst + i) = *(s2 + j);
+		i++;
 	}
-	for (j = 0; s2[j]; j++, i++;)
-	{
-		new[i] = s2[j];
-	}
-	new[i] = '\0';
-	return (new);
+	return (dst);
 }
-
-
-
-
